@@ -1,0 +1,10 @@
+/*==========  Mobile First Method  ==========*/
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    /*@include header-part(auto, 70%, 12px);*/
+
+    @include product-top-middle(15px 0);
+    
+    
+}

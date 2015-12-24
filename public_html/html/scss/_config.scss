@@ -1,0 +1,177 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=latin,vietnamese);*/
+
+/*@font-face{
+    font-family: 'WebFont';
+    src: url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900&subset=latin,vietnamese);
+}*/
+
+/*
+font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+*/
+
+@mixin main-font{
+    font:{
+        /*family: 'Open Sans', sans-serif;*/
+        family: 'Roboto', sans-serif;
+        /*size: 100%;*/
+        weight: normal;
+    }
+}
+
+@mixin phone-number($size, $weight){
+    font:{
+        family: 'Lora', serif;
+        size: $size;
+        weight: $weight;
+    }
+}
+
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($second, $type : ease){
+    -webkit-transition: all $second $type 0s;
+    -moz-transition: all $second $type 0s;
+    transition: all $second $type 0s;
+}
+
+@mixin border($width, $type, $color){
+    border: $width $type $color;
+}
+
+@mixin header-part($div-logo, $logo-width, $font-size){
+    #header{
+        nav{
+            #logo{
+                @if $div-logo != ''{
+                    width: $div-logo;
+                }
+                @if $logo-width != ''{
+                    .navbar-brand{
+                        img: $logo-width;
+                    }
+                }
+            }
+            ul{
+                li{
+                    a{
+                        @if $font-size != ''{
+                            font-size: $font-size;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin product-top-middle($margin){
+    .product{
+        .row{
+            div.prod-block{
+                &:nth-child(2){
+                    margin: $margin;
+                }
+            }
+        }
+    }
+}
+
+@mixin information-header($border-color){
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: $border-color $border-color -moz-use-text-color;
+    border-top: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+$white: #fff;
+$lighten-white: lighten($white, 50%);
+$black: #000;
+$bg-primary: #f6f6f6;
+$color-primary: #666;
+$hot-top-bg: #44aa6c; //#8fd400; // #A2B542;
+$menu-bg: #56ba57; // #ffef00; // #5b8800; // #84904B;
+$menu-color: #ffef00; // #5b8800; // #DFFFBF;
+$menu-color-normal: lighten($menu-color, 5%);
+$menu-color-active: lighten($menu-color, 10%);
+$menu-color-hover: $white;
+
+$style-1-color: #5b8800;
+$style-1-bg-color: #ffef00;
+$style-2-color: $menu-color;
+$style-2-bg-color: $menu-bg;
+
+$brand-color: #ff0000;
+$border-color: #e7e7e7;
+$h-color: #363f45;
+$accordion-normal-color: #363f45;
+$accordion-selected-color: #7acb5a;
+$accordion-minus-color: #CFCFCF;
+$accordion-body-bg: #f9f9f9;
+$main-bottom-bg: #8fd400; // #5B7016;
+$bottom-bg: #56ba57; // #B9C43D;
+$footer-bg: #56ba57; // #b2d400; // #9D8C00;
+$footer-color-link: #fff;
+$new-price-color: #F13340;
+$image-border-color: #DFE2DF;
+$image-border-color-selected: #9CA59C;
+$btn-cart-border-color: #8cac1b;
+$btn-cart-color: #8cac1b;
+$border-color: #e9e8e8;
+$error-text-color: #ff0033;
+$page-color: #44aa6c;
+
+$font-size-body: 1em;
+$font-size-big-title: 1.4285714285714284em;
+$font-size-title: 1.1428571428571428em;
+$font-size-sub-title: 1.2857142857142856em;
+$font-size-description: $font-size-body;
+
+@mixin style-0($no-bg : false){
+    color: $color-primary;
+    @if $no-bg{
+        background: $white;
+    }
+}
+
+@mixin style-1($no-bg : false){
+    color: $style-1-color;
+    @if $no-bg{
+        background: $style-1-bg-color;
+    }
+}
+
+@mixin style-2($no-bg : false){
+    color: $style-2-color;
+    @if $no-bg{
+        background: $style-2-bg-color;
+    }
+}
+
+@mixin style-3($no-bg : false){
+    color: $style-2-bg-color;
+    @if $no-bg{
+        background: $style-2-color;
+    }
+}

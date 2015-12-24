@@ -1,0 +1,59 @@
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+    .header{
+        #logo{
+            .navbar-brand{
+                .img-logo{
+                    /*margin-left: 0;*/
+                }
+            }
+        }
+    }
+
+    .hot-top{
+        ul{
+            margin-bottom: 0;
+            li{
+                vertical-align: middle;
+                display: inline-block;
+                padding: 5px 5px;
+                i{
+                    vertical-align: middle;
+                }
+                .hotline{
+                    @include phone-number(16px, 300);
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .contact-info{
+        .contact-info-form{
+            width: 100%;
+            margin: 0 auto;
+            .nopadding-left {
+                padding-right: 0;
+            }
+            .nopadding-right {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .user-fe-form{
+        .login-holder{
+            width: 90%;
+            padding: 20px;
+        }
+    }
+
+    .newsletter-form-holder{
+        .newsletter-form{
+            margin-top: 0;
+        }
+    }
+
+}
